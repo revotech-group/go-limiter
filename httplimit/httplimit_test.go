@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/sethvargo/go-limiter/httplimit"
-	"github.com/sethvargo/go-limiter/memorystore"
+	"github.com/revotech-group/go-limiter/httplimit"
+	"github.com/revotech-group/go-limiter/memorystore"
 )
 
 var keyFunc httplimit.KeyFunc

@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/gomodule/redigo/redis"
-	"github.com/sethvargo/go-limiter/memorystore"
+	"github.com/revotech-group/go-limiter/memorystore"
 	"github.com/sethvargo/go-redisstore"
 )
 
