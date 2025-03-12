@@ -71,7 +71,7 @@ func (ql *QuotaLimiter) createStore(quota Quota) limiter.Store {
 	return store
 }
 
-func (ql *QuotaLimiter) NewRateLimitMiddleware(quotas []Quota, keyFunc KeyFunc) QuotaMiddleware {
+func (ql *QuotaLimiter) NewMiddleware(quotas []Quota, keyFunc KeyFunc) QuotaMiddleware {
 	return func(next http.Handler) http.Handler {
 
 		type quotaMiddlewarePair struct {
