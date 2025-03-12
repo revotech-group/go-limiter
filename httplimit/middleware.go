@@ -115,7 +115,8 @@ func (m *Middleware) Handle(next http.Handler) http.Handler {
 
 		// Fail if there were no tokens remaining.
 		if !ok {
-			w.Header().Set(HeaderRetryAfter, resetTime)
+			remainingSeconds := int64(reset)/int64(time.Second) - time.Now().Unix()
+			w.Header().Set(HeaderRetryAfter, strconv.FormatInt(remainingSeconds, 10))
 			http.Error(w, http.StatusText(http.StatusTooManyRequests), http.StatusTooManyRequests)
 			return
 		}
